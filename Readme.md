@@ -57,7 +57,7 @@ All Wishbone signals pass through one register stage (`reg_wb`) between the inte
 
 ### Microarchitecture
 
-[Microarchitecture](Microarchitecture-zm-microcontroller.jpg)
+![Microarchitecture](Microarchitecture-zm-microcontroller.jpg)
 
 ### Internal Block Diagram
 
