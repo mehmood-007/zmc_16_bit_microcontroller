@@ -1,0 +1,52 @@
+[*] GTKWave save file - zm_processor linear_search
+[dumpfile] "linear_search.vcd"
+[size] 1600 900
+[sst_width] 220
+[signals_width] 200
+[sst_expanded] 1
+@200
+-Control
+@28
+ls_wave.clk
+ls_wave.a_reset_l
+ls_wave.sync_h
+ls_wave.intr_h
+ls_wave.intr_ack_h
+@22
+ls_wave.state[4:0]
+ls_wave.pc[11:0]
+ls_wave.ir[15:0]
+@200
+-Flags
+@28
+ls_wave.flag_z
+ls_wave.flag_s
+ls_wave.flag_c
+ls_wave.flag_v
+@200
+-Registers (r0=i/ret, r1=a, r2=n, r3=key, r4=ptr, r5=tmp)
+@22
+ls_wave.r0[15:0]
+ls_wave.r1[15:0]
+ls_wave.r2[15:0]
+ls_wave.r3[15:0]
+ls_wave.r4[15:0]
+ls_wave.r5[15:0]
+@200
+-Wishbone
+@28
+ls_wave.wb_cyc
+ls_wave.wb_stb
+ls_wave.wb_we
+ls_wave.wb_ack
+@22
+ls_wave.wb_adr[15:0]
+ls_wave.wb_wdata[15:0]
+ls_wave.wb_rdata[15:0]
+@200
+-Results
+@22
+ls_wave.result0[15:0]
+ls_wave.result1[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

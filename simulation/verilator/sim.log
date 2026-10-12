@@ -1,0 +1,10 @@
+[9004] boot done (PRAM loaded), execution starts at 0x000
+[9018] ext write [ffff] = 0008
+[9046] ext write [fffe] = 4027
+[9048] interrupt acknowledged at PC=027
+[9050] RETI
+[9120] ext write [1020] = 0004
+[9132] ext write [ffff] = 000f
+[9280] ext write [1021] = ffff
+RESULT[0] = 0004   RESULT[1] = ffff   (PC=012 state=00000)
+- sim_top.v:97: Verilog $finish

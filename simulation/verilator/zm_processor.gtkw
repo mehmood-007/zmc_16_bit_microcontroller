@@ -1,0 +1,58 @@
+[*] GTKWave save file for zm_processor (Verilator flow): make wave
+[dumpfile] "zm_processor.vcd"
+[timestart] 107900000
+[size] 1600 900
+[pos] -1 -1
+*-12.000000 108048000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.sim_top.
+[sst_width] 260
+[signals_width] 300
+[sst_expanded] 1
+@200
+-Control
+@28
+TOP.sim_top.clk
+TOP.sim_top.a_reset_l
+TOP.sim_top.sync_h
+TOP.sim_top.intr_h
+TOP.sim_top.intr_ack_h
+@24
+TOP.sim_top.cyc[31:0]
+TOP.sim_top.state[4:0]
+@22
+TOP.sim_top.pc[11:0]
+TOP.sim_top.zm_processor_i.data_i.inst_reg_i.ire[15:0]
+@200
+-Registers
+@22
+TOP.sim_top.r0[15:0]
+TOP.sim_top.r1[15:0]
+TOP.sim_top.r2[15:0]
+TOP.sim_top.r3[15:0]
+TOP.sim_top.r4[15:0]
+TOP.sim_top.r5[15:0]
+TOP.sim_top.zm_processor_i.data_i.stack_pointer_i.pointer[15:0]
+@28
+TOP.sim_top.zm_processor_i.data_i.flag_bank_i.z_flag_o
+TOP.sim_top.zm_processor_i.data_i.flag_bank_i.carry_flag_o
+TOP.sim_top.zm_processor_i.data_i.flag_bank_i.sign_flag_o
+TOP.sim_top.zm_processor_i.data_i.flag_bank_i.ov_flag_o
+@200
+-Wishbone
+@28
+TOP.sim_top.wb_cyc
+TOP.sim_top.wb_stb
+TOP.sim_top.wb_we
+TOP.sim_top.wb_ack
+@22
+TOP.sim_top.wb_adr[15:0]
+TOP.sim_top.wb_dat_i[15:0]
+TOP.sim_top.wb_dat_o[15:0]
+@200
+-Results
+@22
+TOP.sim_top.result0[15:0]
+TOP.sim_top.result1[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

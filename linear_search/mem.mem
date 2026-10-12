@@ -1,0 +1,52 @@
+@000 F401   // LD   r1, #0x1000        main: r1 = ARRAY
+@001 1000
+@002 F402   // LD   r2, #8             r2 = N
+@003 0008
+@004 F404   // LD   r4, #0x1010        r4 = &KEY[0]
+@005 1010
+@006 F043   // MRD  r3, [r4]           r3 = KEY[0]
+@007 D020   // CALL 0x020              r0 = linear_search(r1, r2, r3)
+@008 F404   // LD   r4, #0x1020        r4 = &RESULT[0]
+@009 1020
+@00A F204   // MWR  [r4], r0           RESULT[0] = r0
+@00B F404   // LD   r4, #0x1011        r4 = &KEY[1]
+@00C 1011
+@00D F043   // MRD  r3, [r4]           r3 = KEY[1]
+@00E D020   // CALL 0x020
+@00F F404   // LD   r4, #0x1021        r4 = &RESULT[1]
+@010 1021
+@011 F204   // MWR  [r4], r0           RESULT[1] = r0
+@012 F800   // HLT
+
+@020 F400   // LD   r0, #0             linear_search: i = 0
+@021 0000
+@022 0005   // MOV  r5, r0             loop: r5 = i
+@023 0B25   // SUB  r5, r2             Z = (i == n)
+@024 F605   // CND.Z                   skip next unless Z
+@025 C02E   // JMP  0x02E              -> not_found
+@026 0015   // MOV  r5, r1             r5 = a
+@027 0805   // ADD  r5, r0             r5 = &a[i]
+@028 F055   // MRD  r5, [r5]           r5 = a[i]
+@029 0B35   // SUB  r5, r3             Z = (a[i] == key)
+@02A F605   // CND.Z                   skip next unless Z
+@02B C030   // JMP  0x030              -> found
+@02C 0100   // INC  r0, r0             i++
+@02D C022   // JMP  0x022              -> loop
+@02E F400   // LD   r0, #0xFFFF        not_found: return -1
+@02F FFFF
+@030 FA00   // RET                     found: return i
+
+@700 FB00   // RETI                    isr
+
+@1000 0012  // ARRAY[0]
+@1001 0034  // ARRAY[1]
+@1002 0056  // ARRAY[2]
+@1003 0078  // ARRAY[3]
+@1004 009A  // ARRAY[4]
+@1005 00BC  // ARRAY[5]
+@1006 00DE  // ARRAY[6]
+@1007 00F0  // ARRAY[7]
+@1010 009A  // KEY[0]    present -> expect 0x0004
+@1011 1234  // KEY[1]    absent  -> expect 0xFFFF
+@1020 DEAD  // RESULT[0]
+@1021 DEAD  // RESULT[1]
