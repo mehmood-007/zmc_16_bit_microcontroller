@@ -1,4 +1,4 @@
-# zm_processor
+# 16-bit Microcontroller based on ZMC ISA
 
 A small 16-bit microcontroller core written in plain Verilog (2018). Its features:
 
@@ -333,9 +333,18 @@ RESULT[0] = 0004   RESULT[1] = ffff   (PC=012 state=00000)
 
 The writes to `0xFFFF`/`0xFFFE` are stack pushes (return address of each call and the {flags, PC} interrupt frame). The test passes when `RESULT[0] = 0004` and `RESULT[1] = ffff`.
 
+## GDS Layout
+![GDS Layout](GDS_Layout.png)
+
 ## Notes and limitations
 
 - **Port naming:** `wb_dat_i` / `wb_dat_o` are named from the slave's point of view. `wb_dat_i` is the core's **output**.
 - **Behavioural PRAM:** `inst_rom` wraps a behavioural SRAM model. The original hard macro instance (`SU180_4096X16X1BM2`) is commented out. A technology macro is needed for synthesis.
 - **Interrupt return address:** interrupt entry pushes the registered PC (`address_pc`) without +1; subroutine calls push `address_pc + 1`.
 - **Undecoded opcodes:** opcodes with no decode act as NOPs. There is no illegal-instruction trap.
+
+## Disclaimer & Intellectual Property Notice
+
+**DISCLAIMER:** I do not own or possess any rights to the ZMDI Microcontroller Core (ZMC) specification or its accompanying Instruction Set Architecture (ISA). I have strictly refrained from making public any technical documents, PDFs, manuals, or official course materials provided by the instructors. 
+
+This repository contains my own independent hardware design and implementation, developed purely for academic and portfolio purposes. The source code represents my unique microarchitecture layout and optimization choices. All rights to the underlying architecture specification belong to their respective university or corporate owners.
