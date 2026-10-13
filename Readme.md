@@ -1,12 +1,14 @@
 # 16-bit Microcontroller based on ZMC ISA
 
-A small 16-bit microcontroller core written in plain Verilog (2018). Its features:
+A small 16-bit microcontroller single pipelined core written in plain Verilog (2018). Its features:
 
 - 12-bit program counter and a 4K x 16 on-chip program RAM (PRAM).
 - Banked register file.
 - Hardware multiply and divide.
 - Interrupt and sync inputs.
 - A Wishbone master for external data memory, I/O and the stack.
+- Max acheivable Freq ~ 100 Mhz
+- Optimized for Area (Single Airthmetic for most of ALU operations) 
 
 At reset, the core copies its program from external memory into the PRAM over Wishbone. It then runs from PRAM address `0x000`.
 
